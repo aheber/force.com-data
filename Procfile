@@ -1,1 +1,1 @@
-web: server
+web: forcedata-proxy
