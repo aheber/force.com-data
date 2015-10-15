@@ -180,7 +180,7 @@ func getSalesforceAuth(authToken string) (string, error) {
 	v.Set("grant_type", "authorization_code")
 	v.Set("client_id", "3MVG9KI2HHAq33Ry8Vv4AYur3JeQQA.QC64MANBpo0n6HAdNfk5OZsAWrqMrIcue6bMjF3RsGaM0yQKzIvLtA")
 	v.Set("client_secret", "8498989734413345550")
-	v.Set("redirect_uri", "http://localhost:8080/auth_callback")
+	v.Set("redirect_uri", "https://force-com-data.herokuapp.com/auth_callback")
 	v.Set("format", "json")
 
 	client := &http.Client{}
