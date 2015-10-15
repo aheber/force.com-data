@@ -1,0 +1,10 @@
+{
+	"ImportPath": "github.com/aheber/forcedata-proxy",
+	"GoVersion": "go1.5",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Rev": "13e4d0621caa4d77fd9aa470ef6d7ab63d1a5e41"
+		}
+	]
+}

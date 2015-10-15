@@ -14,7 +14,7 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/gorilla/websocket"
+	"github.com/aheber/forcedata-proxy/Godeps/_workspace/src/github.com/gorilla/websocket"
 )
 
 var upgrader = websocket.Upgrader{
