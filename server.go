@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"sync"
 	"text/template"
 
@@ -45,6 +46,10 @@ var conns map[string]*websocket.Conn
 var lock sync.Mutex
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	memory = make(map[string]string)
 	conns = make(map[string]*websocket.Conn)
 
@@ -63,7 +68,7 @@ func main() {
 
 	http.HandleFunc("/api/query", sfdcQuery)
 
-	log.Fatal(http.ListenAndServe(":8080", httplog(http.DefaultServeMux)))
+	log.Fatal(http.ListenAndServe(":"+port, httplog(http.DefaultServeMux)))
 
 }
 
