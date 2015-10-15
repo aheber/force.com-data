@@ -572,7 +572,7 @@ var app = (function () {
 		// on Key message, open connection to Salesforce oauth
 		// on oAuthComplete message finish setup
 
-    $.ajax("http://localhost:8080/token", {success: function(data, status, res){
+    $.ajax(proxy_address+"/token", {success: function(data, status, res){
       console.log("Success:"+data);
       signalId = data;
       app.setupLogin();
