@@ -21,6 +21,7 @@ var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
 }
+var sfdcSecret string
 
 func socketHandler(w http.ResponseWriter, r *http.Request) {
 	v := r.URL.Query()
@@ -50,6 +51,11 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
+	sfdcSecret = os.Getenv("SFDCSECRET")
+	if sfdcSecret == "" {
+		log.Fatal("Secret not set, unable to continue")
+	}
+
 	memory = make(map[string]string)
 	conns = make(map[string]*websocket.Conn)
 
